@@ -17,7 +17,7 @@ npm install
 
 npm run dev
 ```
-
+```shell
 ├── build // webpack/node配置文件
 │   ├── build.js
 │   ├── check-versions.js
@@ -51,3 +51,4 @@ npm run dev
 ├── index.html // 首页模板
 ├── package.json // 包管理文件
 └── README.md // 描述文件
+```
