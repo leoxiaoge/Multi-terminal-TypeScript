@@ -6,6 +6,8 @@
 
 如果你使用vue-cli脚手架来构建vue项目，那么你只需敲击下面5行命令即可生成一个简单的vue项目（前提安装node.js）：
 
+https://vuejs-templates.github.io/webpack
+
 ```shell
 npm install -g vue-cli
 
