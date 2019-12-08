@@ -46,6 +46,9 @@ npm run dev
 │   └── main.js
 ├── static
 ├── .babelrc // babel配置文件
+├── .editorconfig // editor配置文件
+├── .eslintignore // eslint忽略文件
+├── .eslinttrc // eslint配置文件
 ├── .gitignore // gitignore忽略文件
 ├── .editorconfig // 编码风格配置文件
 ├── .postcssrc.js // postcss配置文件
