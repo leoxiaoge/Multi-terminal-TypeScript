@@ -1,7 +1,5 @@
 # Multi-terminal
 
-多端应用
-
 # 1.通过命令安装vue-cli（脚手架）
 
 如果你使用vue-cli脚手架来构建vue项目，那么你只需敲击下面5行命令即可生成一个简单的vue项目（前提安装node.js）：
@@ -35,6 +33,7 @@ npm run dev
 │   ├── dev.env.js
 │   ├── index.js
 │   └── prod.env.js
+├── docs // 文档
 ├── node_modules // npm包文件
 ├── src // 静态资源文件
 │   ├── assets
