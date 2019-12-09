@@ -106,12 +106,11 @@ electron-packager <sourcedir> <appname> --platform=<platform> --arch=<arch> [opt
 2、首先在项目根目录下面的 package.json 里添加代码
 ```
     "packager": "electron-packager ./app HelloWorld --all --out ./OutApp --version 1.4.0 --overwrite --icon=./app/img/icon/icon.ico"
-    "packager": "electron-packager . app --win --out App --arch=x64 --version 1.0.0 --overwrite --ignore=node_modules"
-    "packageDarwin": "electron-packager . 'Hosts' --platform=darwin --arch=x64 --icon=hosts.icns --out=./dist --asar --app-version=2.0.1 --ignore=\"(dist|src|docs|.gitignore|LICENSE|README.md|webpack.config*|node_modules)\"",
-    "packageWin": "electron-packager . 'Hosts' --platform=win32 --arch=x64 --icon=hosts.ico --out=./dist --asar --app-version=2.0.1 --ignore=\"(dist|src|docs|.gitignore|LICENSE|README.md|webpack.config.js|node_modules)\"",
-    "packageLinux": "electron-packager . 'Hosts' --platform=linux --arch=x64 --out=./dist --asar --app-version=2.0.1 --ignore=\"(dist|src|docs|.gitignore|LICENSE|README.md|webpack.config.js|node_modules)\"",
-    "prepackage": "rm -rf build && webpack --config webpack.config.prod.js && rm -rf dist",
-    "package": "npm run packageDarwin && npm run packageWin && npm run packageLinux"
+    "electron": "electron .",
+    "package": "npm run packageDarwin && npm run packageWin && npm run packageLinux",
+    "packagerDarwin": "electron-packager . darwin --platform=darwin --arch=x64 --icon=favicon.icns --out=./dist --asar --app-version=1.0.0",
+    "packagerWin": "electron-packager . win --platform=win32 --arch=x64 --icon=favicon.ico --out=./dist --asar --app-version=1.0.0",
+    "packagerLinux": "electron-packager . linux --platform=linux --arch=x64 --icon=favicon.ico --out=./dist --asar --app-version=1.0.0"
 ```
 
 使用命令运行调试
