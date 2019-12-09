@@ -80,3 +80,46 @@ yarn add electron@latesti --dev
 # Node 12.8.1
 # Chromium 78.0.3904.113
 ```
+
+```
+"scripts": {
+    "electron": "electron .",
+    "packager": "electron-packager ."
+  },
+"devDependencies": {
+    "electron": "^7.1.3",
+    "electron-packager": "^14.1.1",
+}
+```
+1.electron-packager打包官方基本命令
+```
+electron-packager <sourcedir> <appname> --platform=<platform> --arch=<arch> [optional flags...]
+```
+
+命令说明： 
+* sourcedir：项目所在路径 
+* appname：打包的项目名字 
+* --platform=<platform>：确定了你要构建哪个平台的应用（Windows、Mac 还是 Linux） 
+* --arch=<arch>：决定了使用 x86 还是 x64 还是两个架构都用 
+* [optional flags...]：可选选项
+
+2、首先在项目根目录下面的 package.json 里添加代码
+```
+    "packager": "electron-packager ./app HelloWorld --all --out ./OutApp --version 1.4.0 --overwrite --icon=./app/img/icon/icon.ico"
+    "packager": "electron-packager . app --win --out App --arch=x64 --version 1.0.0 --overwrite --ignore=node_modules"
+    "packageDarwin": "electron-packager . 'Hosts' --platform=darwin --arch=x64 --icon=hosts.icns --out=./dist --asar --app-version=2.0.1 --ignore=\"(dist|src|docs|.gitignore|LICENSE|README.md|webpack.config*|node_modules)\"",
+    "packageWin": "electron-packager . 'Hosts' --platform=win32 --arch=x64 --icon=hosts.ico --out=./dist --asar --app-version=2.0.1 --ignore=\"(dist|src|docs|.gitignore|LICENSE|README.md|webpack.config.js|node_modules)\"",
+    "packageLinux": "electron-packager . 'Hosts' --platform=linux --arch=x64 --out=./dist --asar --app-version=2.0.1 --ignore=\"(dist|src|docs|.gitignore|LICENSE|README.md|webpack.config.js|node_modules)\"",
+    "prepackage": "rm -rf build && webpack --config webpack.config.prod.js && rm -rf dist",
+    "package": "npm run packageDarwin && npm run packageWin && npm run packageLinux"
+```
+
+使用命令运行调试
+```
+npm run electron
+```
+
+使用命令执行打包
+```
+npm run packager
+```
