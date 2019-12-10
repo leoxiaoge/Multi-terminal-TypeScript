@@ -2,12 +2,12 @@
   "name": "project",
   "version": "1.0.0",
   "description": "description",
-  "author": "xiaogeleo <1269286430@qq.com>",
+  "author": "author",
   "private": true,
   "main": "main.js",
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.config.js",
-    "start": "npm run dev:h5",
+    "serve": "npm run dev",
     "unit": "jest --config test/unit/jest.conf.js --coverage",
     "e2e": "node test/e2e/runner.js",
     "test": "npm run unit && npm run e2e",
@@ -16,8 +16,12 @@
     "dev:web": "cross-env NODE_ENV=development webpack-dev-server --inline --progress --config build/webpack.dev.config.js",
     "dev:mp-weixin": "cross-env NODE_ENV=development webpack --config build/webpack.mp.config.js --progress --hide-modules",
     "build:web": "rimraf dist/web && cross-env NODE_ENV=production webpack --config build/webpack.prod.config.js --progress --hide-modules",
-    "build:mp-weixin": "cross-env NODE_ENV=production webpack --config build/webpack.mp.config.js --progress --hide-modules",
-    "electron": "electron ."
+    "build:mp-weixin": "rimraf dist/mp-weixin && cross-env NODE_ENV=production webpack --config build/webpack.mp.config.js --progress --hide-modules",
+    "electron": "electron .",
+    "package": "npm run packageDarwin && npm run packageWin && npm run packageLinux",
+    "packagerDarwin": "electron-packager . darwin --platform=darwin --arch=x64 --icon=favicon.icns --out=./dist --asar --app-version=1.0.0",
+    "packagerWin": "rimraf dist/window-win32-x64 && electron-packager . window --platform=win32 --arch=x64 --icon=favicon.ico --out=./dist --asar --app-version=1.0.0",
+    "packagerLinux": "electron-packager . linux --platform=linux --arch=x64 --icon=favicon.ico --out=./dist --asar --app-version=1.0.0"
   },
   "dependencies": {
     "vue": "^2.5.2",
@@ -41,6 +45,8 @@
     "cross-env": "^6.0.3",
     "css-loader": "^0.28.0",
     "electron": "^7.1.3",
+    "electron-packager": "^14.1.1",
+    "electron-updater": "^4.2.0",
     "eslint": "^6.7.2",
     "eslint-config-airbnb-base": "^11.3.0",
     "eslint-friendly-formatter": "^3.0.0",

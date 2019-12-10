@@ -13,7 +13,7 @@ module.exports = {
   },
   module: {
     rules: [
-      // eslint
+      // eslint-loader
       {
         test: /\.(js|vue)$/,
         loader: 'eslint-loader',
@@ -24,7 +24,7 @@ module.exports = {
           emitWarning: true
         }
       },
-      // vue
+      // vue-loader
       {
         test: /\.vue$/,
         use: [{
@@ -38,7 +38,7 @@ module.exports = {
           }
         }]
       },
-      // ts
+      // ts-loader
       {
         test: /\.tsx?$/,
         exclude: /node_modules/,

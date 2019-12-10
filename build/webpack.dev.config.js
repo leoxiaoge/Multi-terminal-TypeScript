@@ -17,7 +17,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     contentBase: false,
     compress: true,
     host: process.env.HOST || 'localhost',
-    port: +process.env.PORT || 8080,
+    port: +process.env.PORT || 8082,
     open: true, // 自动打开浏览器
     overlay: {warnings: false, errors: true}, // 展示全屏报错
     publicPath: '/',
@@ -66,7 +66,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
 });
 
 module.exports = new Promise((resolve, reject) => {
-  portfinder.basePort = +process.env.PORT || 8080
+  portfinder.basePort = +process.env.PORT || 8082
   portfinder.getPort((err, port) => {
     if (err) {
       reject(err)
