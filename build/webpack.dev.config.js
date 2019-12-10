@@ -1,6 +1,6 @@
 const webpack = require('webpack')
 const merge = require('webpack-merge')
-const baseWebpackConfig = require('./webpack.base.conf')
+const baseWebpackConfig = require('./webpack.base.config')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const portfinder = require('portfinder')
@@ -11,7 +11,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
   devServer: {
     clientLogLevel: 'warning',
     historyApiFallback: {
-      rewrites: [{from: /.*/, to: '/index.html'}],
+      rewrites: [{from: /.*/, to: '/index.html'}]
     },
     hot: true,
     contentBase: false,
@@ -24,34 +24,34 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     proxy: {},
     quiet: true, // for FriendlyErrorsPlugin
     watchOptions: {
-      poll: false,
+      poll: false
     }
   },
   module: {
     rules: [{
       test: /\.(less|css)$/,
       use: [{
-        loader: 'vue-style-loader',
+        loader: 'vue-style-loader'
       }, {
-        loader: 'css-loader',
+        loader: 'css-loader'
       }, {
         loader: 'postcss-loader',
         options: {
           plugins: [
-            autoprefixer,
-          ],
+            autoprefixer
+          ]
         }
       }, {
-        loader: 'less-loader',
-      }],
-    }],
+        loader: 'less-loader'
+      }]
+    }]
   },
   devtool: 'cheap-module-eval-source-map',
   plugins: [
     new webpack.DefinePlugin({
       'process.env': {
-        NODE_ENV: '"development"',
-      },
+        NODE_ENV: '"development"'
+      }
     }),
     new VueLoaderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
@@ -60,10 +60,10 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: 'index.html',
-      inject: true,
-    }),
-  ],
-})
+      inject: true
+    })
+  ]
+});
 
 module.exports = new Promise((resolve, reject) => {
   portfinder.basePort = +process.env.PORT || 8080
@@ -74,11 +74,10 @@ module.exports = new Promise((resolve, reject) => {
       devWebpackConfig.devServer.port = port
       devWebpackConfig.plugins.push(new FriendlyErrorsPlugin({
         compilationSuccessInfo: {
-          messages: [`Your application is running here: http://${devWebpackConfig.devServer.host}:${port}`],
+          messages: [`Your application is running here: http://${devWebpackConfig.devServer.host}:${port}`]
         },
         onErrors: undefined,
       }))
-
       resolve(devWebpackConfig)
     }
   })

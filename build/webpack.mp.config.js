@@ -8,7 +8,7 @@ const TerserPlugin = require('terser-webpack-plugin')
 const MpPlugin = require('mp-webpack-plugin') // 用于构建小程序代码的 webpack 插件
 const stylehacks = require('stylehacks')
 const autoprefixer = require('autoprefixer')
-const mpPluginConfig = require('./miniprogram.conf.js') // 插件配置
+const mpPluginConfig = require('./miniprogram.config.js') // 插件配置
 const isDevelop = process.env.NODE_ENV === 'development'
 const isOptimize = true // 是否压缩业务代码，开发者工具可能无法完美支持业务代码使用到的 es 特性，建议自己做代码压缩
 

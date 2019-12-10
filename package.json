@@ -6,17 +6,17 @@
   "private": true,
   "main": "main.js",
   "scripts": {
-    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.config.js",
     "start": "npm run dev:h5",
     "unit": "jest --config test/unit/jest.conf.js --coverage",
     "e2e": "node test/e2e/runner.js",
     "test": "npm run unit && npm run e2e",
     "lint": "eslint --ext .js,.vue src test/unit test/e2e/specs",
     "build": "node build/build.js",
-    "dev:web": "cross-env NODE_ENV=development webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
-    "dev:mp-weixin": "cross-env NODE_ENV=development webpack --config build/webpack.mp.conf.js --progress --hide-modules",
-    "build:web": "rimraf dist/web && cross-env NODE_ENV=production webpack --config build/webpack.prod.conf.js --progress --hide-modules",
-    "build:mp-weixin": "cross-env NODE_ENV=production webpack --config build/webpack.mp.conf.js --progress --hide-modules",
+    "dev:web": "cross-env NODE_ENV=development webpack-dev-server --inline --progress --config build/webpack.dev.config.js",
+    "dev:mp-weixin": "cross-env NODE_ENV=development webpack --config build/webpack.mp.config.js --progress --hide-modules",
+    "build:web": "rimraf dist/web && cross-env NODE_ENV=production webpack --config build/webpack.prod.config.js --progress --hide-modules",
+    "build:mp-weixin": "cross-env NODE_ENV=production webpack --config build/webpack.mp.config.js --progress --hide-modules",
     "electron": "electron ."
   },
   "dependencies": {
