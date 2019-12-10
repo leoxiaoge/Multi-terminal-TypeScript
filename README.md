@@ -122,3 +122,13 @@ npm run electron
 ```
 npm run packager
 ```
+
+主要事项：
+1.配置PATH环境变量
+2.Windows上不能打包mas或darwin平台应用
+报错信息：
+```
+Cannot create symlinks (on Windows hosts, it requires admin privileges); skipping darwin platform
+```
+解决方法：
+以管理员权限运行命令行窗口
