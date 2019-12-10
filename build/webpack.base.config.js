@@ -102,5 +102,5 @@ module.exports = {
   node: {
     // 避免 webpack 注入不必要的 setImmediate polyfill 因为 Vue 已经将其包含在内
     setImmediate: false
-  },
+  }
 }

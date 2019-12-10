@@ -45,50 +45,50 @@ const webpackConfig = merge(baseWebpackConfig, {
         cssProcessorPluginOptions: {
           preset: ['default', {
             discardComments: {
-              removeAll: true,
-            },
-          }],
+              removeAll: true
+            }
+          }]
         },
         canPrint: false
       }),
       // 压缩 js
       new TerserPlugin({
         test: /\.js(\?.*)?$/i,
-        parallel: true,
-      }),
-    ],
+        parallel: true
+      })
+    ]
   },
   devtool: false,
   module: {
     rules: [{
       test: /\.(less|css)$/,
       use: [{
-        loader: MiniCssExtractPlugin.loader,
+        loader: MiniCssExtractPlugin.loader
       }, {
-        loader: 'css-loader',
+        loader: 'css-loader'
       }, {
         loader: 'postcss-loader',
         options: {
           plugins: [
-            autoprefixer,
-          ],
+            autoprefixer
+          ]
         }
       }, {
-        loader: 'less-loader',
-      }],
-    }],
+        loader: 'less-loader'
+      }]
+    }]
   },
   plugins: [
     // http://vuejs.github.io/vue-loader/en/workflow/production.html
     new webpack.DefinePlugin({
       'process.env': {
-        NODE_ENV: '"production"',
-      },
+        NODE_ENV: '"production"'
+      }
     }),
     new VueLoaderPlugin(),
     // 分离 css 文件
     new MiniCssExtractPlugin({
-      filename: path.posix.join('static', 'css/[name].[hash].css'),
+      filename: path.posix.join('static', 'css/[name].[hash].css')
     }),
     new HtmlWebpackPlugin({
       filename: path.resolve(__dirname, '../dist/web/index.html'),
@@ -103,8 +103,8 @@ const webpackConfig = merge(baseWebpackConfig, {
       chunksSortMode: 'dependency'
     }),
     // 当 vendor 模块没有改变时，保证模块 id 不变
-    new webpack.HashedModuleIdsPlugin(),
-  ],
+    new webpack.HashedModuleIdsPlugin()
+  ]
 })
 
 module.exports = webpackConfig
