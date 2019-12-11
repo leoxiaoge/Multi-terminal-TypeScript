@@ -5,9 +5,6 @@ const path = require('path')
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
-const winURL = process.env.NODE_ENV === 'development'
-  ? `http://localhost:8082`
-  : `file://${__dirname}/index.html`
 
 function createWindow () {
   // Create the browser window.
@@ -20,7 +17,7 @@ function createWindow () {
   })
 
   // and load the index.html of the app.
-  mainWindow.loadFile(winURL)
+  mainWindow.loadFile('index.html')
 
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()

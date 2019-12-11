@@ -7,7 +7,7 @@ module.exports = {
     app: path.resolve(__dirname, '../src/main.js')
   },
   output: {
-    path: path.resolve(__dirname, '../dist/web'),
+    path: path.resolve(__dirname, '../dist/h5'),
     filename: '[name].js',
     publicPath: '/'
   },

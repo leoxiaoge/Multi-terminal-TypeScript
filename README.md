@@ -81,6 +81,17 @@ yarn add electron@latesti --dev
 # Chromium 78.0.3904.113
 ```
 
+构建应用
+```
+vue init simulatedgreg/electron-vue my-project
+```
+
+打包发布有两种方式：
+
+electron-packager，打包方式比较简单，想为哪个平台打包，执行相应命令即可。
+
+electron-builder，自动化部署，持续集成，只要监测到 github 上绑定的代码仓库发生了变化，即可打包发布。
+
 ```
 "scripts": {
     "electron": "electron .",
@@ -104,6 +115,7 @@ electron-packager <sourcedir> <appname> --platform=<platform> --arch=<arch> [opt
 * [optional flags...]：可选选项
 
 2、首先在项目根目录下面的 package.json 里添加代码
+(1).electron-packager
 ```
     "packager": "electron-packager ./app HelloWorld --all --out ./OutApp --version 1.4.0 --overwrite --icon=./app/img/icon/icon.ico"
     "electron": "electron .",
@@ -111,6 +123,23 @@ electron-packager <sourcedir> <appname> --platform=<platform> --arch=<arch> [opt
     "packagerDarwin": "electron-packager . darwin --platform=darwin --arch=x64 --icon=favicon.icns --out=./dist --asar --app-version=1.0.0",
     "packagerWin": "electron-packager . win --platform=win32 --arch=x64 --icon=favicon.ico --out=./dist --asar --app-version=1.0.0",
     "packagerLinux": "electron-packager . linux --platform=linux --arch=x64 --icon=favicon.ico --out=./dist --asar --app-version=1.0.0"
+```
+(2).electron-builder
+```
+    "build": "node .electron-vue/build.js && electron-builder",
+    "build:dir": "node .electron-vue/build.js && electron-builder --dir",
+    "build:clean": "cross-env BUILD_TARGET=clean node .electron-vue/build.js",
+    "build:web": "cross-env BUILD_TARGET=web node .electron-vue/build.js",
+    "dev": "node .electron-vue/dev-runner.js",
+    "e2e": "npm run pack && mocha test/e2e",
+    "lint": "eslint --ext .js,.vue -f ./node_modules/eslint-friendly-formatter src test",
+    "lint:fix": "eslint --ext .js,.vue -f ./node_modules/eslint-friendly-formatter --fix src test",
+    "pack": "npm run pack:main && npm run pack:renderer",
+    "pack:main": "cross-env NODE_ENV=production webpack --progress --colors --config .electron-vue/webpack.main.config.js",
+    "pack:renderer": "cross-env NODE_ENV=production webpack --progress --colors --config .electron-vue/webpack.renderer.config.js",
+    "test": "npm run unit && npm run e2e",
+    "unit": "karma start test/unit/karma.conf.js",
+    "postinstall": "npm run lint:fix"
 ```
 
 使用命令运行调试

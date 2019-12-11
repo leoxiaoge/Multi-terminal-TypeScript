@@ -11,7 +11,7 @@ const { VueLoaderPlugin } = require('vue-loader')
 const webpackConfig = merge(baseWebpackConfig, {
   mode: 'production',
   output: {
-    path: path.resolve(__dirname, '../dist/web'),
+    path: path.resolve(__dirname, '../dist/h5'),
     filename: path.posix.join('static', 'js/[name].[chunkhash].js'),
     chunkFilename: path.posix.join('static', 'js/[id].[chunkhash].js')
   },
