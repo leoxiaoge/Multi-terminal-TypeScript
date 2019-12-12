@@ -20,7 +20,7 @@
     "electron": "electron .",
     "package": "npm run packageDarwin && npm run packageWin && npm run packageLinux",
     "packagerDarwin": "electron-packager . darwin --platform=darwin --arch=x64 --icon=favicon.icns --out=./dist --asar --app-version=1.0.0",
-    "packagerWin": "rimraf dist/window-win32-x64 && electron-packager . window --platform=win32 --arch=x64 --icon=favicon.ico --out=./dist --asar --app-version=1.0.0",
+    "packagerWin": "electron-packager . win --platform=win32 --arch=x64 --icon=favicon.ico --out=./dist --asar --app-version=1.0.0",
     "packagerLinux": "electron-packager . linux --platform=linux --arch=x64 --icon=favicon.ico --out=./dist --asar --app-version=1.0.0",
     "build:pack": "node .electron-vue/build.js && electron-builder",
     "build:dir": "node .electron-vue/build.js && electron-builder --dir",
@@ -39,6 +39,12 @@
     "directories": {
       "output": "electron"
     },
+    "publish": [
+      {
+        "provider": "generic",
+        "url": "http://example.com/app/update"
+      }
+    ],
     "files": [
       "dist/electron/**/*"
     ],
@@ -81,6 +87,7 @@
     "autoprefixer": "^7.1.2",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
+    "babel-eslint": "^8.2.3",
     "babel-helper-vue-jsx-merge-props": "^2.0.3",
     "babel-plugin-dynamic-import-node": "^1.2.0",
     "babel-plugin-syntax-jsx": "^6.18.0",
@@ -103,7 +110,6 @@
     "electron-debug": "^1.5.0",
     "electron-devtools-installer": "^2.2.4",
     "electron-builder": "^20.19.2",
-    "babel-eslint": "^8.2.3",
     "electron-packager": "^14.1.1",
     "electron-updater": "^4.2.0",
     "eslint": "^4.19.1",

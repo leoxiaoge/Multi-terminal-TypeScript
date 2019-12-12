@@ -81,6 +81,13 @@ yarn add electron@latesti --dev
 # Chromium 78.0.3904.113
 ```
 
+本地环境(推荐)
+```
+# Electron 7.1.3
+# Node 10.15.3
+# Npm 6.13.1
+```
+
 构建应用
 ```
 vue init simulatedgreg/electron-vue my-project
