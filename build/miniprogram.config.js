@@ -46,7 +46,7 @@ module.exports = {
   pages: {},
   // 项目配置，会被合并到 project.config.json
   projectConfig: {
-    projectname: 'template-vue',
-    appid: ''
+    projectname: 'project',
+    appid: 'wx020c76417d5429cb'
   }
 }

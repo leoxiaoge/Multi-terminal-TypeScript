@@ -91,9 +91,11 @@ const webpackConfig = merge(baseWebpackConfig, {
       filename: path.posix.join('static', 'css/[name].[hash].css')
     }),
     new HtmlWebpackPlugin({
-      filename: path.resolve(__dirname, '../dist/web/index.html'),
+      filename: path.resolve(__dirname, '../dist/h5/index.html'),
       template: 'index.html',
       inject: true,
+      favicon: path.resolve('build/icons/favicon.ico'),
+      title: '摩术师连锁店',
       minify: {
         removeComments: true,
         collapseWhitespace: true,

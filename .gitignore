@@ -1,6 +1,7 @@
 node_modules
 /dist
 /electron
+project-v1.0.0.tgz
 
 #System Files
 .DS_Store

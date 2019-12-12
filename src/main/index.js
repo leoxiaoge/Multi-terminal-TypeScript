@@ -23,16 +23,16 @@ function createWindow () {
     width: 1000,
     height: 563,
     useContentSize: true,
-    // show: false,
+    show: false,
     autoHideMenuBar: true,
     webPreferences: {
       nodeIntegration: true
     }
   })
 
-  // mainWindow.maximize()
+  mainWindow.maximize()
 
-  // mainWindow.show()
+  mainWindow.show()
 
   mainWindow.loadURL(winURL)
 
