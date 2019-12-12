@@ -170,6 +170,7 @@ Cannot create symlinks (on Windows hosts, it requires admin privileges); skippin
 以管理员权限运行命令行窗口
 
 ##微信小程序
+
 小程序使用kbone框架偶尔出现：Uncaught Error: module "pages/index/miniprogram-render.js" is not defined
 
 Component is not found in path "pages/home/miniprogram-element" (using by "pages/home/index");onAppRoute
