@@ -82,7 +82,7 @@ const webpackConfig = merge(baseWebpackConfig, {
     // http://vuejs.github.io/vue-loader/en/workflow/production.html
     new webpack.DefinePlugin({
       'process.env': {
-        isWeb: true, // 注入环境变量，用于业务代码判断
+        web: true, // 注入环境变量，用于业务代码判断
         NODE_ENV: '"production"'
       }
     }),

@@ -25,9 +25,9 @@ export default Vue.extend({
       console.log('I am in Web')
     }
     console.log(process.env)
-    console.log(process.env.isWeb)
-    if (process.env.NODE_ENV) {
-      console.log('I am in Web123')
+    console.log(process.env.web)
+    if (process.env.web) {
+      console.log('I am in web!')
     }
   },
   methods: {
