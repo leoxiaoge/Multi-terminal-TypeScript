@@ -170,10 +170,12 @@ Error: Component is not found in path "pages/home/miniprogram-element" (using by
 
 解决方法
 
+```
 cd dist mp
 
 npm install --save miniprogram-render
 
 npm install --save miniprogram-element
+```
 
 开发者工具导入项目--工具--构建npm--编译
