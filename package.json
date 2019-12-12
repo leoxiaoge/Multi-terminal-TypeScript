@@ -12,7 +12,7 @@
     "e2e": "node test/e2e/runner.js",
     "test": "npm run unit && npm run e2e",
     "lint": "eslint --ext .js,.vue src test/unit test/e2e/specs",
-    "build": "node build/build.js",
+    "build": "npm run build:h5 && npm run build:mp",
     "dev:h5": "cross-env NODE_ENV=development webpack-dev-server --inline --progress --config build/webpack.dev.config.js",
     "dev:mp": "cross-env NODE_ENV=development webpack --config build/webpack.mp.config.js --progress --hide-modules",
     "build:h5": "rimraf dist/h5 && cross-env NODE_ENV=production webpack --config build/webpack.prod.config.js --progress --hide-modules",
