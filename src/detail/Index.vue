@@ -17,7 +17,7 @@ export default Vue.extend({
     Header,
     Footer
   },
-  created() {
+  created () {
     window.addEventListener('wxload', query => console.log('page3 wxload', query))
     window.addEventListener('wxshow', () => console.log('page3 wxshow'))
     window.addEventListener('wxready', () => console.log('page3 wxready'))
@@ -25,12 +25,12 @@ export default Vue.extend({
     window.addEventListener('wxunload', () => console.log('page3 wxunload'))
   },
   methods: {
-    onClickBack() {
+    onClickBack () {
       if (process.env.isMiniprogram) {
         wx.navigateBack()
       }
-    },
-  },
+    }
+  }
 })
 </script>
 

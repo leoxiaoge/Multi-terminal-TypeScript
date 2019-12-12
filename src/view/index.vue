@@ -15,9 +15,9 @@ export default Vue.extend({
   components: {
     Header,
     Footer,
-    Web,
+    Web
   },
-  created() {
+  created () {
     window.addEventListener('wxload', query => console.log('page1 wxload', query))
     window.addEventListener('wxshow', () => console.log('page1 wxshow'))
     window.addEventListener('wxready', () => console.log('page1 wxready'))
@@ -30,13 +30,13 @@ export default Vue.extend({
     }
   },
   methods: {
-    onClickJump() {
+    onClickJump () {
       window.location.href = '/test/list/123'
     },
-    onClickOpen() {
+    onClickOpen () {
       window.open('/test/detail/123')
-    },
-  },
+    }
+  }
 })
 </script>
 

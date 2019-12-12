@@ -12,19 +12,19 @@ const router = new Router({
   routes: [{
     path: '/(home|index)?',
     name: 'Home',
-    component: Home,
+    component: Home
   }, {
     path: '/index.html',
     name: 'HomeHtml',
-    component: Home,
+    component: Home
   }, {
     path: '/test/(home|index)',
     name: 'HomeTest',
-    component: Home,
-  }],
+    component: Home
+  }]
 })
 
-export default function createApp() {
+export default function createApp () {
   const container = document.createElement('div')
   container.id = 'app'
   document.body.appendChild(container)

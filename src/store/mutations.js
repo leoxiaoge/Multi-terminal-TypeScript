@@ -1,5 +1,5 @@
 export default {
-  FAKE_MUTATION(state, input) {
+  FAKE_MUTATION (state, input) {
     state.input = input
   }
 }

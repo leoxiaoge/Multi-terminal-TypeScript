@@ -9,14 +9,14 @@ import { mapState, mapActions } from 'vuex'
 
 export default {
   computed: {
-    ...mapState(['headerTips', 'input']),
+    ...mapState(['headerTips', 'input'])
   },
-  mounted() {
+  mounted () {
     this.FAKE_ACTION('june')
   },
   methods: {
-    ...mapActions(['FAKE_ACTION']),
-  },
+    ...mapActions(['FAKE_ACTION'])
+  }
 }
 </script>
 

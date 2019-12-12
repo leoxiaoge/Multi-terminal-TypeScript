@@ -18,7 +18,7 @@ export default Vue.extend({
     Header,
     Footer
   },
-  created() {
+  created () {
     window.addEventListener('wxload', (query: any) => console.log('page2 wxload', query))
     window.addEventListener('wxshow', () => console.log('page2 wxshow'))
     window.addEventListener('wxready', () => console.log('page2 wxready'))
@@ -26,10 +26,10 @@ export default Vue.extend({
     window.addEventListener('wxunload', () => console.log('page2 wxunload'))
   },
   methods: {
-    onClickJump() {
+    onClickJump () {
       window.location.href = '/home'
-    },
-  },
+    }
+  }
 })
 </script>
 

@@ -13,15 +13,15 @@ const router = new Router({
   routes: [{
     path: '/test/list/:id',
     name: 'List',
-    component: List,
+    component: List
   }, {
     path: '/test/detail/:id',
     name: 'Detail',
-    component: Detail,
-  }],
+    component: Detail
+  }]
 })
 
-export default function createApp() {
+export default function createApp () {
   const container = document.createElement('div')
   container.id = 'app'
   document.body.appendChild(container)

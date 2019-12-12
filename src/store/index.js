@@ -8,8 +8,8 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     headerTips: 'hello',
-    input: '',
+    input: ''
   },
   actions,
-  mutations,
+  mutations
 })

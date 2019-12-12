@@ -12,22 +12,22 @@ export default new Router({
   routes: [{
     path: '/(home|index)?',
     name: 'Home',
-    component: Home,
+    component: Home
   }, {
     path: '/index.html',
     name: 'HomeHtml',
-    component: Home,
+    component: Home
   }, {
     path: '/test/(home|index)',
     name: 'HomeTest',
-    component: Home,
+    component: Home
   }, {
     path: '/test/list/:id',
     name: 'List',
-    component: List,
+    component: List
   }, {
     path: '/test/detail/:id',
     name: 'Detail',
-    component: Detail,
-  }],
+    component: Detail
+  }]
 })
