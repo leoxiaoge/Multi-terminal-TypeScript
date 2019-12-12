@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-const Home = () => import(/* webpackChunkName: "Home" */'@/view/Index.vue')
+const Home = () => import(/* webpackChunkName: "Home" */'@/views/Index.vue')
 const List = () => import(/* webpackChunkName: "List" */'@/list/Index.vue')
 const Detail = () => import(/* webpackChunkName: "Detail" */'@/detail/Index.vue')
 
