@@ -6,8 +6,8 @@
 
 <script>
 import Vue from 'vue'
-import Header from '../common/Header.vue'
-import Footer from '../common/Footer.vue'
+import Header from '@/common/Header.vue'
+import Footer from '@/common/Footer.vue'
 import Web from 'reduce-loader!../common/Web.vue'
 
 export default Vue.extend({
