@@ -52,7 +52,7 @@ export default Vue.extend({
 		} else {
 			console.log('I am in Web')
 		}
-		console.log(process.env)
+		console.log(process.env.web)
 		console.log(process.env.isMiniprogram)
 		if (process.env.NODE_ENV) {
 			console.log('I am in Web123')
