@@ -82,6 +82,7 @@ const webpackConfig = merge(baseWebpackConfig, {
     // http://vuejs.github.io/vue-loader/en/workflow/production.html
     new webpack.DefinePlugin({
       'process.env': {
+        isWeb: true, // 注入环境变量，用于业务代码判断
         NODE_ENV: '"production"'
       }
     }),
@@ -95,7 +96,7 @@ const webpackConfig = merge(baseWebpackConfig, {
       template: 'index.html',
       inject: true,
       favicon: path.resolve('build/icons/favicon.ico'),
-      title: '摩术师连锁店',
+      title: 'title',
       minify: {
         removeComments: true,
         collapseWhitespace: true,

@@ -6,4 +6,10 @@
 /docs/
 /src/main/
 /src/renderer/
-/src/
+/src/common/
+/src/detail/
+/src/home/
+/src/list/
+/src/mp/
+/src/index.ejs
+/src/main.js

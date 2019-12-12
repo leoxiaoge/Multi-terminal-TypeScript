@@ -7,15 +7,11 @@
 <script>
 import Vue from 'vue'
 import Header from '@/common/Header.vue'
-import Footer from '@/common/Footer.vue'
-import Web from 'reduce-loader!../common/Web.vue'
 
 export default Vue.extend({
   name: 'App',
   components: {
-    Header,
-    Footer,
-    Web
+    Header
   },
   created () {
     window.addEventListener('wxload', query => console.log('page1 wxload', query))
@@ -27,6 +23,11 @@ export default Vue.extend({
       console.log('I am in miniprogram')
     } else {
       console.log('I am in Web')
+    }
+    console.log(process.env)
+    console.log(process.env.isWeb)
+    if (process.env.NODE_ENV) {
+      console.log('I am in Web123')
     }
   },
   methods: {
