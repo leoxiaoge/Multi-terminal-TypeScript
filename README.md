@@ -144,6 +144,7 @@ electron-packager <sourcedir> <appname> --platform=<platform> --arch=<arch> [opt
 * [optional flags...]：可选选项
 
 2、首先在项目根目录下面的 package.json 里添加代码
+
 (1).electron-packager
 ```
     "packager": "electron-packager ./app HelloWorld --all --out ./OutApp --version 1.4.0 --overwrite --icon=./app/img/icon/icon.ico"
