@@ -19,33 +19,50 @@ npm run dev
 ```
 
 ```shell
+├── .electron-vue // electron配置文件
+│   ├── build.js // build构建配置
+│   ├── dev-client.js // dev-client构建配置
+│   ├── dev-runner.js // build构建配置
+│   ├── webpack.main.config.js // webpack.main.config构建配置
+│   ├── webpack.renderer.config.js // webpack.renderer.config构建配置
+│   ├── webpack.web.config.js // webpack.web.config构建配置
 ├── build // webpack/node配置文件
-│   ├── miniprogram.config.js  // mp-webpack-plugin配置
-│   ├── webpack.mp.config.js   // 小程序端构建配置
-│   ├── build.js  // build构建配置
-│   ├── check-versions.js
-│   ├── dev-client.js
-│   ├── dev-server.js
-│   ├── utils.js
-│   ├── vue-loader.conf.js // vue-loader构建配置
-│   ├── webpack.base.conf.js // Web端构建基础配置
-│   ├── webpack.dev.conf.js // Web端构建开发环境配置
-│   └── webpack.prod.conf.js // Web端构建生产环境配置
-├── config // 环境配置文件
-│   ├── dev.env.js
-│   ├── index.js
-│   └── prod.env.js
-├── docs // 文档
+│   ├── icons // 图标文件
+│   ├── miniprogram.config.js // mp-webpack-plugin配置
+│   ├── webpack.base.config.js // webpack.base.config构建配置
+│   ├── webpack.base.mobile.config.js // Android/IOS端构建配置
+│   ├── webpack.dev.config.js // Web端构建开发环境配置
+│   ├── webpack.mp.config.js  // 小程序端构建配置
+│   ├── webpack.prod.config.js // Web端构建生产环境配置
+│   └── webpack.prod.mobile.config.js // Android/IOS端构建生产环境配置
 ├── node_modules // npm包文件
 ├── src // 静态资源文件
-│   ├── assets
+│   ├── assets // 资源图片
 │   │    └── logo.png
-│   ├── components 
-│   │    └── Hello.vue 
-│   ├── router
-│   │    └── index.js 
-│   ├── App.vue 
-│   └── main.js
+│   ├── common // 公共文件
+│   │    └── api
+│   ├── components // 组件
+│   │    └── Hello.vue
+│   ├── main // electron主程序
+│   │    ├── index.dev.js
+│   │    └── index.js
+│   ├── renderer // electron程序
+│   │    ├── assets
+│   │    ├── components
+│   │    ├── router
+│   │    ├── store
+│   │    └── main.js
+│   ├── mp // 小程序路由
+│   │    ├── home
+│   │    └── other
+│   ├── router // 路由
+│   │    └── index.js
+│   ├── utils // 类方法
+│   │    └── utils.js
+│   ├── App.vue
+│   ├── index.ejs // 桌面应用端
+│   ├── index.js // 移动端
+│   └── main.js // web端
 ├── static
 ├── .babelrc // babel配置文件
 ├── .editorconfig // editor配置文件
@@ -54,9 +71,14 @@ npm run dev
 ├── .gitignore // gitignore忽略文件
 ├── .editorconfig // 编码风格配置文件
 ├── .postcssrc.js // postcss配置文件
+├── .travis.yml // electron/electron-builder配置文件
+├── appveyor.yml // electron/electron-builder配置文件
 ├── package.json // node包管理文件
 ├── index.html // 首页模板
 ├── package.json // 包管理文件
+├── main.js // electron/electron-packager/node主配置文件
+├── preload.js // electron/electron-packager/node配置文件
+├── tsconfig.json // typescript配置文件
 └── README.md // 描述文件
 ```
 
