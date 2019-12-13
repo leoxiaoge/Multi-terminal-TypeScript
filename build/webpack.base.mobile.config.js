@@ -4,10 +4,10 @@ const eslintFriendlyFormatter = require('eslint-friendly-formatter')
 module.exports = {
   context: path.resolve(__dirname, '../'),
   entry: {
-    app: path.resolve(__dirname, '../src/main.js')
+    app: path.resolve(__dirname, '../src/index.js')
   },
   output: {
-    path: path.resolve(__dirname, '../dist/h5'),
+    path: path.resolve(__dirname, '../dist/mobile'),
     filename: '[name].js',
     publicPath: '/'
   },
