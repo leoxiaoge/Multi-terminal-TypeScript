@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import { sync } from 'vuex-router-sync'
 import App from '../../App.vue'
 import store from '../../store'
-import Home from '@/views/Index.vue'
+import Home from '@/views/typescript-template.vue'
 
 Vue.use(Router)
 
@@ -12,14 +12,6 @@ const router = new Router({
   routes: [{
     path: '/(home|index)?',
     name: 'Home',
-    component: Home
-  }, {
-    path: '/index.html',
-    name: 'HomeHtml',
-    component: Home
-  }, {
-    path: '/test/(home|index)',
-    name: 'HomeTest',
     component: Home
   }]
 })
