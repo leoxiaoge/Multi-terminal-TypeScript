@@ -19,14 +19,31 @@ export default Vue.extend({
     window.addEventListener('wxhide', () => console.log('page1 wxhide'))
     window.addEventListener('wxunload', () => console.log('page1 wxunload'))
     if (process.env.isMiniprogram) {
-      console.log('I am in miniprogram')
-    } else {
-      console.log('I am in Web')
+      console.log('I am in isMiniprogram')
+      wx.showModal({
+        title: '提示',
+        content: '这是一个小程序原生弹窗',
+        success (res) {
+          if (res.confirm) {
+            console.log('用户点击确定')
+          } else if (res.cancel) {
+            console.log('用户点击取消')
+          }
+        }
+      })
     }
-    console.log(process.env)
+    // #ifdef WINDOWS
+    console.log('WINDOWS', process.env.WINDOWS)
+    // #endif
     console.log(process.env.web)
-    if (process.env.web) {
-      console.log('I am in web!')
+    if (process.env.isMiniprogram) {
+      console.log('I am in isMiniprogram!')
+    }
+    if (process.env.isH5) {
+      console.log('I am in IS_H5')
+    }
+    if (process.env.isMobile) {
+      console.log('I am in IS_MOBILE')
     }
   },
   methods: {

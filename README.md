@@ -210,3 +210,11 @@ npm install --save miniprogram-element
 ```
 
 开发者工具导入项目--工具--构建npm--编译
+
+使用微信API注意事项
+
+在.eslintrc.js文件中加入以下内容
+
+```
+globals: { wx: true }
+```

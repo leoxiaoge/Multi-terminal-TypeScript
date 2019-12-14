@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import { sync } from 'vuex-router-sync'
 import App from '../../App.vue'
 import store from '../../store'
-import Home from '../../home/Index.vue'
+import Home from '@/views/Index.vue'
 
 Vue.use(Router)
 

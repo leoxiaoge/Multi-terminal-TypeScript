@@ -50,7 +50,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
   plugins: [
     new webpack.DefinePlugin({
       'process.env': {
-        web: true, // 注入环境变量，用于业务代码判断
+        isH5: JSON.stringify(true), // 注入环境变量，用于业务代码判断
         NODE_ENV: '"development"'
       }
     }),
