@@ -4,26 +4,15 @@ const eslintFriendlyFormatter = require('eslint-friendly-formatter')
 module.exports = {
   context: path.resolve(__dirname, '../'),
   entry: {
-    app: path.resolve(__dirname, '../src/index.js')
+    app: path.resolve(__dirname, '../src/mobile/main.ts')
   },
   output: {
-    path: path.resolve(__dirname, '../dist/mobile'),
+    path: path.resolve(__dirname, '../dist/h5'),
     filename: '[name].js',
     publicPath: '/'
   },
   module: {
     rules: [
-      // eslint-loader
-      {
-        test: /\.(js|vue)$/,
-        loader: 'eslint-loader',
-        enforce: 'pre',
-        include: [path.resolve(__dirname, '../src')],
-        options: {
-          formatter: eslintFriendlyFormatter,
-          emitWarning: true
-        }
-      },
       // vue-loader
       {
         test: /\.vue$/,
@@ -38,24 +27,30 @@ module.exports = {
           }
         }]
       },
+      // eslint-loader
+      {
+        test: /\.(js|vue|ts|tsx|jsx)$/,
+        enforce: 'pre',
+        exclude: /node_modules/,
+        loader: 'eslint-loader',
+        options: {
+          fix: false,
+          extensions: ['.js', '.jsx', '.vue', '.ts', '.tsx'],
+          cache: false,
+          emitWarning: true,
+          emitError: false
+        }
+      },
       // ts-loader
       {
-        test: /\.tsx?$/,
+        test: /\.ts(x)?$/,
+        loader: 'ts-loader',
         exclude: /node_modules/,
-        use: [{
-          loader: 'thread-loader'
-        }, {
-          loader: 'babel-loader',
-          options: {
-            cacheDirectory: true
-          }
-        }, {
-          loader: 'ts-loader',
-          options: {
-            appendTsSuffixTo: [/\.vue$/],
-            happyPackMode: true
-          }
-        }]
+        options: {
+          appendTsSuffixTo: [/\.vue$/],
+          transpileOnly: true,
+          happyPackMode: false
+        }
       },
       // js
       {
@@ -93,7 +88,7 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['.js', '.vue', '.json'],
+    extensions: ['.ts', '.js', '.vue', '.json', '.jsx'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
       '@': path.resolve(__dirname, '../src')

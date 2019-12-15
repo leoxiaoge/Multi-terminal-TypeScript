@@ -1,0 +1,1 @@
+export const AdsListGet = 'API.Home.AdsListGet' // API

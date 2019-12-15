@@ -7,7 +7,7 @@
 export default {
   name: 'components',
   methods: {}
-}
+};
 </script>
 <style>
 </style>

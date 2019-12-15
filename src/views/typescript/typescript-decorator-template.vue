@@ -7,18 +7,18 @@
   </div>
 </template>
 <script lang="ts">
-import Vue from 'vue'
+import Vue from 'vue';
 export default Vue.extend({
   name: 'App',
   created () {
-    console.log('created')
+    console.log('created');
   },
   methods: {
     onClickJump () {
-      window.location.href = '/'
+      window.location.href = '/';
     }
   }
-})
+});
 </script>
 <style lang="less">
 .cnt {

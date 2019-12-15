@@ -19,7 +19,6 @@ export default class extends Vue {
   created () {
     this.getList();
   }
-
   private async getList() {
     this.Loading = true;
     // const { data } = await getArticles(this.listQuery)

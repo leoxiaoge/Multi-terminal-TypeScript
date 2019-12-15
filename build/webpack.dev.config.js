@@ -18,7 +18,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     compress: true,
     host: process.env.HOST || 'localhost',
     port: +process.env.PORT || 8082,
-    open: true, // 自动打开浏览器
+    open: false, // 自动打开浏览器
     overlay: {warnings: false, errors: true}, // 展示全屏报错
     publicPath: '/',
     proxy: {},

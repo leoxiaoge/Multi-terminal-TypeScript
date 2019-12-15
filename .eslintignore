@@ -6,11 +6,11 @@
 /docs/
 /src/main/
 /src/renderer/
+/src/store/
 /src/common/
-/src/detail/
-/src/home/
-/src/list/
-/src/mp/
 /src/index.ejs
+/src/mp/
+/src/test/
 /src/main.js
 /src/index.js
+/src/router/
