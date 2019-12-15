@@ -6,7 +6,7 @@
 </template>
 <script>
 import Vue from 'vue';
-import Header from '@/common/Header.vue';
+import Header from '@/components/Header.vue';
 export default Vue.extend({
   name: 'App',
   components: {
@@ -56,12 +56,10 @@ export default Vue.extend({
   }
 });
 </script>
-
 <style lang="less">
 .content {
   margin-top: 20px;
 }
-
 a, button {
   display: block;
   width: 100%;
@@ -71,7 +69,6 @@ a, button {
   font-size: 20px;
   border: 1px solid #ddd;
 }
-
 .miniprogram-root {
   .for-web {
     display: none;

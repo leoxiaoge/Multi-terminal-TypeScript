@@ -6,7 +6,7 @@
 </template>
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import TypeScript from '@/components/typescript.vue'
+import TypeScript from '@/components/typescript.vue';
 // import { AdsListGet } from '../common/api/api'
 @Component({
   name: 'Test',
