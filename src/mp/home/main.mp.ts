@@ -1,20 +1,21 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import { sync } from 'vuex-router-sync';
-import App from '../../App.vue';
-import store from '../../store';
-import Home from '@/views/typescript-template.vue';
+import App from '@/App.vue';
+import store from '@/store';
+import router from '@/router';
+// import Home from '@/views/index.vue';
 
 Vue.use(Router);
 
-const router = new Router({
-  mode: 'history',
-  routes: [{
-    path: '/(home|index)?',
-    name: 'Home',
-    component: Home
-  }]
-});
+// const router = new Router({
+//   mode: 'history',
+//   routes: [{
+//     path: '/(home|index)?',
+//     name: 'Home',
+//     component: Home
+//   }]
+// });
 
 export default function createApp () {
   const container = document.createElement('div');
@@ -28,7 +29,7 @@ export default function createApp () {
   return new Vue({
     el: '#app',
     router,
-    store,
     render: h => h(App)
   });
 }
+

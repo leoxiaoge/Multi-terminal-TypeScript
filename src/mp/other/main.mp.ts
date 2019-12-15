@@ -1,17 +1,19 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import { sync } from 'vuex-router-sync';
-import App from '../../App.vue';
-import store from '../../store';
+import App from '@/App.vue';
+import store from '@/store/index.ts';
+import Home from '@/views/index.vue';
 
 Vue.use(Router);
 
+console.log(store);
 const router = new Router({
   mode: 'history',
   routes: [{
     path: '/test/list/:id',
-    name: 'List',
-    component: List
+    name: 'Home',
+    component: Home
   }]
 });
 

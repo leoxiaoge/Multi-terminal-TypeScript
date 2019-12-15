@@ -11,7 +11,11 @@ module.exports = {
     node: true,
     serviceworker: true
   },
-  extends: ['plugin:vue/base', 'plugin:@typescript-eslint/recommended', 'plugin:vue/essential', 'standard'],
+  extends: [
+    'plugin:vue/base', 
+    'plugin:@typescript-eslint/recommended', 
+    'plugin:vue/essential', 'standard'
+  ],
   rules: {
     // 设置默认eslint规则
     'one-var': 0,
@@ -36,7 +40,8 @@ module.exports = {
     // https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin/docs/rules
     '@typescript-eslint/semi': ['error'],
     '@typescript-eslint/indent': ['error', 2],
-    '@typescript-eslint/explicit-function-return-type': 0
+    '@typescript-eslint/explicit-function-return-type': 0,
+    '@typescript-eslint/no-explicit-any': 0
   },
   globals: { wx: true }
 };

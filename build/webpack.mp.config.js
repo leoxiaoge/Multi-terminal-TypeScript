@@ -16,8 +16,8 @@ module.exports = {
   mode: 'production',
   entry: {
     // js 入口
-    home: path.resolve(__dirname, '../src/mp/home/main.mp.js'),
-    other: path.resolve(__dirname, '../src/mp/other/main.mp.js'),
+    home: path.resolve(__dirname, '../src/mp/home/main.mp.ts'),
+    other: path.resolve(__dirname, '../src/mp/other/main.mp.ts'),
   },
   output: {
     path: path.resolve(__dirname, '../dist/mp/common'), // 放到小程序代码目录中的 common 目录下
@@ -110,18 +110,22 @@ module.exports = {
           }
         ],
       },
-      // eslint
+      // eslint-loader
       {
-        test: /\.(js|vue)$/,
+        test: /\.(js|vue|ts|tsx|jsx)$/,
         loader: 'eslint-loader',
         enforce: 'pre',
         include: [path.resolve(__dirname, '../src')],
         options: {
+          fix: false,
           formatter: eslintFriendlyFormatter,
+          cache: false,
+          emitError: false,
+          extensions: ['.js', '.jsx', '.vue', '.ts', '.tsx'],
           emitWarning: true,
         },
       },
-      // vue
+      // vue-loader
       {
         test: /\.vue$/,
         use: [
@@ -137,9 +141,9 @@ module.exports = {
           'vue-improve-loader',
         ]
       },
-      // ts
+      // ts-loader
       {
-        test: /\.tsx?$/,
+        test: /\.ts(x)?$/,
         exclude: /node_modules/,
         use: [{
           loader: 'thread-loader',
@@ -152,6 +156,7 @@ module.exports = {
           loader: 'ts-loader',
           options: {
             appendTsSuffixTo: [/\.vue$/],
+            transpileOnly: true,
             happyPackMode: true,
           },
         }],
@@ -186,7 +191,7 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['.js', '.vue', '.json'],
+    extensions: ['.ts', '.js', '.vue', '.json', '.jsx'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
       '@': path.resolve(__dirname, '../src'),
