@@ -1,13 +1,16 @@
 <template>
   <div class="home">
+    <Header></Header>
     <hello-world msg="vue.js"/>
   </div>
 </template>
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+import Header from '@/components/Header.vue';
 import HelloWorld from '@/components/HelloWorld.vue';
 @Component({
   components: {
+    Header,
     HelloWorld
   }
 })
