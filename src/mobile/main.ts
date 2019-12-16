@@ -6,7 +6,7 @@ import { sync } from 'vuex-router-sync';
 Vue.config.productionTip = false;
 sync(store, router);
 /* eslint-disable no-new */
-document.addEventListener('deviceready', function () {
+document.addEventListener('deviceready', () => {
   new Vue({
     el: '#app',
     router,
