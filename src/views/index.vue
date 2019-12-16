@@ -1,16 +1,18 @@
 <template>
   <div class="container">
     <Header></Header>
-    <p>应用</p>
+    <hello-world msg="vue.js"/>
   </div>
 </template>
 <script>
 import Vue from 'vue';
 import Header from '@/components/Header.vue';
+import HelloWorld from '@/components/HelloWorld.vue';
 export default Vue.extend({
   name: 'App',
   components: {
-    Header
+    Header,
+    HelloWorld
   },
   created () {
     window.addEventListener('wxload', query => console.log('page1 wxload', query));
