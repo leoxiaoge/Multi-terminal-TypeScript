@@ -41,6 +41,9 @@ export default class Home extends Vue {
     if (process.env.isMobile) {
       console.log('I am in isMobile');
     }
+    if (!process.env.IS_WEB) {
+      console.log('I am in IS_WEB!');
+    }
   }
 
   private async getList() {

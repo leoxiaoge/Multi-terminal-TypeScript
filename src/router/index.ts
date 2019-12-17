@@ -9,7 +9,7 @@ export default new Router({
     {
       path: '/',
       name: 'landing-page',
-      component: require('@/views/index').default
+      component: require('@/views/home').default
     },
     {
       path: '*',

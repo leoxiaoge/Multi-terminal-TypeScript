@@ -78,11 +78,6 @@ let rendererConfig = {
         exclude: /node_modules/
       },
       {
-        test: /\.ts$/,
-        use: 'babel-loader',
-        exclude: /node_modules/
-      },
-      {
         test: /\.node$/,
         use: 'node-loader'
       },

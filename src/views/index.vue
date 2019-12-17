@@ -4,7 +4,7 @@
     <hello-world msg="vue.js"/>
   </div>
 </template>
-<script>
+<script lang="ts">
 import Vue from 'vue';
 import Header from '@/components/Header.vue';
 import HelloWorld from '@/components/HelloWorld.vue';
@@ -25,7 +25,7 @@ export default Vue.extend({
       wx.showModal({
         title: '提示',
         content: '这是一个小程序原生弹窗',
-        success (res) {
+        success (res: any) {
           if (res.confirm) {
             console.log('用户点击确定');
           } else if (res.cancel) {
