@@ -35,6 +35,7 @@ module.exports = {
         loader: 'eslint-loader',
         options: {
           fix: false,
+          formatter: eslintFriendlyFormatter,
           extensions: ['.js', '.jsx', '.vue', '.ts', '.tsx'],
           cache: false,
           emitWarning: true,
